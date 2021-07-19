@@ -16,7 +16,9 @@ This web app aims to let people save, manage, and use their bookmarks. These goa
 
 **Run app**
 To run the app execute `rackup -p 4567` in the command line.
+
 Visit http://localhost:4567/ for the index page.
+
 Visit http://localhost:4567/bookmarks for the (currently empty) list of bookmarks.
 
 **Run tests**
