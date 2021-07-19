@@ -30,5 +30,4 @@ So that I can see what websites I saved
 I want to see a list of my bookmarks
 
 **Domain Model**
-
-TODO
+![Domain model for list of bookmarks user story](/public/images/domain_model_user_story_1.jpeg)
