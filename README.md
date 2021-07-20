@@ -3,17 +3,24 @@
 This web app aims to let people save, manage, and use their bookmarks. These goals will be achieved through using BDD and TDD driven development cycles.
 
 ## Instructions
+**Set up project**
+* Clone the project to a local directory using `git clone https://github.com/SipofTea/bookmark-manager.git`.
+* In the root of the project directory run `bundle`.
+
 **Set up database**
 
-* Ensure PostgreSQL is installed and set up
+* Ensure PostgreSQL is installed and set up.
+* Connect to psql (`psql postgres`).
+* Create the development and testing databases. 
+ 
+```
+CREATE DATABASE bookmark_manager;
+CREATE DATABASE bookmark_manager_test;
+```
 
-* Connect to psql (`psql postgres`)
-
-* Create database (`CREATE DATABASE bookmark_manager;`)
-
-* Connect to database (`\c bookmark_manager;`)
-
+* Connect to development database (`\c bookmark_manager;`).
 * Run SQL scripts in `db/migrations` in given order.
+* Repeat connection and script steps for the test database.
 
 **Run app**
 
@@ -25,23 +32,16 @@ Visit http://localhost:4567/bookmarks for the (currently empty) list of bookmark
 
 **Run tests**
 
-To run tests execute `rspec` in the command line from the project root directory .
+To run tests execute `rspec` in the command line from the project root directory.
 
 ## Specification (🔴 TODO, 🟢 Complete)
 * Show a list of bookmarks 🟢
-
 * Add new bookmarks 🔴
-
 * Delete bookmarks 🔴
-
 * Update bookmarks 🔴
-
 * Comment on bookmarks 🔴
-
 * Tag bookmarks into categories 🔴
-
 * Filter bookmarks by tag 🔴
-
 * Users are restricted to manage only their own bookmarks 🔴
 
 ## User Stories
