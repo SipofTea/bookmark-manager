@@ -13,4 +13,9 @@ describe Bookmark do
     expect(bookmark_list).to include('http://www.twitch.tv')
     expect(bookmark_list).to include('http://www.soundcloud.com')
   end
+  it 'saves a bookmark to the database' do
+    Bookmark.create('https://github.com/')
+    bookmark_list = Bookmark.all
+    expect(bookmark_list).to include('https://github.com/')
+  end
 end

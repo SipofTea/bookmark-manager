@@ -7,7 +7,6 @@ class Bookmark
           else
             PG.connect dbname: 'bookmark_manager'
           end
-
     bookmark_list = con.exec 'SELECT (url) FROM bookmarks;'
     bookmark_array = []
     bookmark_list.each do |row|
@@ -17,7 +16,16 @@ class Bookmark
   rescue PG::Error => e
     puts e.message
   ensure
-    bookmark_list.clear if bookmark_list
-    con.close if con
+    bookmark_list&.clear
+    con&.close
+  end
+
+  def self.create(url)
+    con = if ENV['RACK_ENV'] == 'test'
+            PG.connect(dbname: 'bookmark_manager_test')
+          else
+            PG.connect(dbname: 'bookmark_manager')
+          end
+    con.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
   end
 end
