@@ -38,7 +38,7 @@ To run tests execute `rspec` in the command line from the project root directory
 
 ## Specification (🔴 TODO, 🟢 Complete)
 * Show a list of bookmarks 🟢
-* Add new bookmarks 🔴
+* Add new bookmarks 🟢
 * Delete bookmarks 🔴
 * Update bookmarks 🔴
 * Comment on bookmarks 🔴
