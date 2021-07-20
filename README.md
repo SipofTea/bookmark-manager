@@ -28,7 +28,9 @@ To run the app execute `rackup -p 4567` in the command line.
 
 Visit http://localhost:4567/ for the index page.
 
-Visit http://localhost:4567/bookmarks for the (currently empty) list of bookmarks.
+Visit http://localhost:4567/bookmarks for the list of bookmarks.
+
+Visit http://localhost:4567/bookmarks/new to add a new bookmark.
 
 **Run tests**
 
