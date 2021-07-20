@@ -1,11 +1,16 @@
 require 'bookmark'
 
 describe Bookmark do
-  it 'contains an array on creation' do
-    expect(Bookmark.all).to eq([])
+  before(:each) do
+    populate_test_bookmarks_table
   end
-  it 'can store instances of bookmark' do
-    bookmark = Bookmark.new
-    expect(Bookmark.all).to eq([bookmark])
+  it 'contains an array on creation' do
+    expect(Bookmark.all).to be_an_instance_of(Array)
+  end
+  it 'returns urls from database' do
+    bookmark_list = Bookmark.all
+    expect(bookmark_list).to include('http://www.reddit.com')
+    expect(bookmark_list).to include('http://www.twitch.tv')
+    expect(bookmark_list).to include('http://www.soundcloud.com')
   end
 end
