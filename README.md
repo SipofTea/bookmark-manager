@@ -47,11 +47,17 @@ To run tests execute `rspec` in the command line from the project root directory
 * Users are restricted to manage only their own bookmarks 🔴
 
 ## User Stories
+Story 1
+```
 As a user	
-
 So that I can see what websites I saved	
-
 I want to see a list of my bookmarks
-
+```
 **Domain Model**
 ![Domain model for list of bookmarks user story](/public/images/domain_model_user_story_1.jpeg)
+Story 2
+```
+As a user
+So that I can save websites
+I want to create and save bookmarks
+```
