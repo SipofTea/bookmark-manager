@@ -5,13 +5,13 @@ feature 'view list of bookmarks' do
 
   scenario 'displays content to /bookmarks' do
     visit('/bookmarks')
-    expect(page).to have_content 'Bookmark 1'
+    expect(page).to have_content 'Bookmark List'
   end
 
-  scenario 'displays a list of bookmarks to /bookmarks' do
+  scenario 'displays a list of bookmarks with links to /bookmarks' do
     visit('/bookmarks')
-    expect(page).to have_content 'http://www.reddit.com'
-    expect(page).to have_content 'http://www.twitch.tv'
-    expect(page).to have_content 'http://www.soundcloud.com'
+    expect(page).to have_link 'Reddit', href: 'https://www.reddit.com'
+    expect(page).to have_link 'Twitch', href: 'https://www.twitch.tv'
+    expect(page).to have_link 'Google', href: 'https://www.google.com'
   end
 end

@@ -1,2 +1,6 @@
-<h1>Bookmark 1</h1>
-<h1><%= Bookmark.all %></h1>
+<h1>Bookmark List</h1>
+<ul>
+<% Bookmark.all.each do |bookmark| %>
+<li><a href="<%= bookmark.url %>"><%= bookmark.title %></a></li>
+<% end %>
+</ul>

@@ -6,7 +6,7 @@ def clear_test_bookmarks_table
 end
 
 def populate_test_bookmarks_table
-  Bookmark.create('http://www.reddit.com')
-  Bookmark.create('http://www.twitch.tv')
-  Bookmark.create('http://www.soundcloud.com')
+  Bookmark.create('Reddit', 'https://www.reddit.com')
+  Bookmark.create('Twitch', 'https://www.twitch.tv')
+  Bookmark.create('Google', 'https://www.google.com')
 end
