@@ -18,11 +18,15 @@ describe Bookmark do
   end
   it 'saves a bookmark to the database' do
     bookmark = Bookmark.create('Github', 'https://github.com/')
-    persisted_data = PG.connect(dbname: 'bookmark_manager_test').query("SELECT * FROM bookmarks WHERE id = #{bookmark.id};")
-
     expect(bookmark).to be_a Bookmark
-    expect(bookmark.id).to eq persisted_data.first['id']
+    expect(bookmark.id).to eq select_by_id(bookmark.id).first['id']
     expect(bookmark.title).to eq 'Github'
     expect(bookmark.url).to eq 'https://github.com/'
+  end
+  it 'deletes bookmark' do
+    bookmark = Bookmark.create('Github', 'https://github.com/')
+    Bookmark.delete(bookmark.id)
+    expect(select_by_id(bookmark.id).ntuples).to eq 0
+    expect(Bookmark.all.length).to eq 0
   end
 end

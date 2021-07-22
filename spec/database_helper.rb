@@ -10,3 +10,7 @@ def populate_test_bookmarks_table
   Bookmark.create('Twitch', 'https://www.twitch.tv')
   Bookmark.create('Google', 'https://www.google.com')
 end
+
+def select_by_id(bookmark_id)
+  PG.connect(dbname: 'bookmark_manager_test').query("SELECT * FROM bookmarks WHERE id = #{bookmark_id};")
+end
