@@ -39,7 +39,7 @@ To run tests execute `rspec` in the command line from the project root directory
 ## Specification (🔴 TODO, 🟢 Complete)
 * Show a list of bookmarks 🟢
 * Add new bookmarks 🟢
-* Delete bookmarks 🔴
+* Delete bookmarks 🟢
 * Update bookmarks 🔴
 * Comment on bookmarks 🔴
 * Tag bookmarks into categories 🔴
@@ -60,4 +60,10 @@ Story 2
 As a user
 So that I can save websites
 I want to create and save bookmarks
+```
+Story 3
+```
+As a user
+So that I can delete websites I no longer want to remember
+I want to delete bookmarks from my list
 ```
