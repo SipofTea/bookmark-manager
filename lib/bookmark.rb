@@ -36,6 +36,21 @@ class Bookmark
     con&.close
   end
 
+  def self.find(id)
+    con = database_connection
+    bookmark = con.exec("SELECT id, title, url FROM bookmarks WHERE id =#{id}")
+    Bookmark.new(bookmark[0]['id'], bookmark[0]['title'], bookmark[0]['url'])
+  end
+
+  def self.update(id, name, url)
+    con = database_connection
+    con.exec("UPDATE bookmarks SET title = '#{name}', url = '#{url}' WHERE id = #{id}")
+  rescue PG::Error => e
+    puts e.message
+  ensure
+    con&.close
+  end
+
   def self.database_connection
     if ENV['RACK_ENV'] == 'test'
       PG.connect(dbname: 'bookmark_manager_test')

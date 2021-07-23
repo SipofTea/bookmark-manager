@@ -1,0 +1,6 @@
+<form action='/bookmarks/<%= @id %>' method='post'>
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <label>Enter bookmark name <input name='bookmark_name' type='text' maxlength='60' minlength='1'></label>
+  <label>Enter url <input name='bookmark' type='url'></label>
+  <button name='save'>Save</button>
+</form>

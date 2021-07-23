@@ -32,6 +32,10 @@ feature 'view list of bookmarks' do
     visit('/bookmarks')
     expect(page).to have_link 'Github', href: 'https://www.github.com'
     click_button('Update Github')
-    expect(page).not_to have_link 'Reddit', href: 'https://www.reddit.com'
+    fill_in 'bookmark_name',	with: 'Pomodoro'
+    fill_in 'bookmark', with: 'https://pomofocus.io/'
+    click_button('save')
+    expect(page).not_to have_link 'Github', href: 'https://www.github.com'
+    expect(page).to have_link 'Pomodoro', href: 'https://pomofocus.io/'
   end
 end

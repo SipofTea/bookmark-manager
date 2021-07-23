@@ -29,4 +29,22 @@ describe Bookmark do
     expect(select_by_id(bookmark.id).ntuples).to eq 0
     expect(Bookmark.all.length).to eq 0
   end
+  it 'finds a bookmark' do
+    bookmark = Bookmark.create('Github', 'https://github.com')
+    Bookmark.find(bookmark.id)
+    expect(bookmark).to be_a Bookmark
+    expect(bookmark.id).to eq bookmark.id
+    expect(bookmark.title).to eq 'Github'
+    expect(bookmark.url).to eq 'https://github.com'
+  end
+
+  it 'updated a bookmark' do
+    bookmark = Bookmark.create('Github', 'https://github.com')
+    Bookmark.update(bookmark.id, 'Facebook', 'https://facebook.com')
+    updated_bookmark = Bookmark.find(bookmark.id)
+    expect(updated_bookmark).to be_a Bookmark
+    expect(updated_bookmark.id).to eq bookmark.id
+    expect(updated_bookmark.title).to eq 'Facebook'
+    expect(updated_bookmark.url).to eq 'https://facebook.com'
+  end
 end
